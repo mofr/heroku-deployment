@@ -1,5 +1,6 @@
 FROM codeship/heroku-deployment
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends git
+ENV CACHE_BUST='2019-09-26'
+
+RUN apt-get update && apt-get install -y --no-install-recommends git devscripts
 RUN curl -sL https://sentry.io/get-cli/ | bash
